@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUSEF.exe | Happy Birthday</title>
+
+    <!-- Google Fonts for Premium look (JetBrains Mono for tech, Cairo for clean Arabic typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loading-state">
+
+    <!-- 1. LOADING SCREEN (BOOTING SYSTEM) -->
+    <div id="loading-screen" class="full-screen-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">YOUSEF.exe</div>
+            <div class="terminal-text text-left" id="boot-text-log">
+                BOOTING SYSTEM...<br>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="boot-progress-fill"></div>
+            </div>
+            <div class="loader-percentage" id="boot-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- 2. TERMINAL INTRO SCREEN -->
+    <div id="terminal-intro-screen" class="full-screen-overlay hidden">
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">yousef_intro.sh</span>
+            </div>
+            <div class="terminal-body text-left" id="intro-terminal-body">
+                <!-- Lines typed dynamically by JavaScript -->
+            </div>
+            <div id="enter-system-wrapper" class="hidden">
+                <div class="glitch-title">YOUSEF.exe</div>
+                <button id="enter-system-btn" class="cyber-btn neon-border-cyan">
+                    <span class="btn-text">[ ENTER SYSTEM ]</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTAINER (Initially hidden, revealed on entering system) -->
+    <div id="main-app" class="hidden">
+
+        <!-- CANVAS FOR CELEBRATORY PARTICLES (Confetti, Hearts) & BACKGROUND CODE RAIN -->
+        <canvas id="particle-canvas"></canvas>
+        <canvas id="code-bg-canvas"></canvas>
+
+        <!-- MUSIC CONTROLLERS -->
+        <div class="audio-widget-container">
+            <button id="music-toggle-btn" class="audio-btn" aria-label="Toggle Birthday Music">
+                <span class="music-icon">🎵</span>
+                <span class="music-label">Music OFF</span>
+            </button>
+            <audio id="birthday-audio" loop>
+                <source src="music/unity.m4a" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- 4. NAVIGATION BAR -->
+        <header class="main-header">
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <span class="logo-symbol">&lt;</span>YOUSEF.exe<span class="logo-symbol"> /&gt;</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link active">HOME</a></li>
+                        <li><a href="#about" class="nav-link">ABOUT</a></li>
+                        <li><a href="#special" class="nav-link">WHY HIM</a></li>
+                        <li><a href="#memories" class="nav-link">MEMORIES</a></li>
+                        <li><a href="#message" class="nav-link">MESSAGE</a></li>
+                        <li><a href="#secret-anchor" class="nav-link">SECRET</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Hamburger Menu Button -->
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Drawer -->
+        <div class="mobile-nav-drawer" id="mobile-drawer">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#home" class="mobile-nav-link">HOME</a></li>
+                    <li><a href="#about" class="mobile-nav-link">ABOUT</a></li>
+                    <li><a href="#special" class="mobile-nav-link">WHY HIM</a></li>
+                    <li><a href="#memories" class="mobile-nav-link">MEMORIES</a></li>
+                    <li><a href="#message" class="mobile-nav-link">MESSAGE</a></li>
+                    <li><a href="#secret-anchor" class="mobile-nav-link">SECRET</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- MAIN CONTENT SECTIONS -->
+        <main>
+
+            <!-- 3. HERO SECTION -->
+            <section id="home" class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title glitch" data-text="HAPPY BIRTHDAY">HAPPY BIRTHDAY</h1>
+                    <div class="hero-name-container">
+                        <span class="hero-name glow-text-red">YOUSEF ❤️</span>
+                    </div>
+                    <div class="hero-subtitle text-monospace">
+                        Computer Engineering Student <span class="cyan-text">|</span> Developer <span
+                            class="cyan-text">|</span> My Favorite Human
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="mouse-icon">
+                            <div class="scroll-wheel"></div>
+                        </div>
+                        <span class="scroll-text">SCROLL TO COMPILE</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. ABOUT YOUSEF SECTION -->
+            <section id="about" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title text-left ltr-text">&gt; who_is(yousef);</h2>
+                    <div class="about-grid">
+                        <!-- Profile Card -->
+                        <div class="about-card cyber-panel">
+                            <div class="panel-header">
+                                <span class="panel-icon">💻</span>
+                                <span class="panel-title">developer_profile.json</span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="profile-details ltr-text">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Name</span>
+                                        <span class="detail-value cyan-text" id="about-name">Yousef</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Major</span>
+                                        <span class="detail-value green-text" id="about-major">Computer
+                                            Engineering</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Status</span>
+                                        <span class="detail-value animate-pulse">Future Engineer 👨‍💻</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Role</span>
+                                        <span class="detail-value">Best Friend / Brother</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">System</span>
+                                        <span class="detail-value text-red">Human v∞</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Profile Picture Frame -->
+                        <div class="profile-pic-container">
+                            <div class="pic-frame-outer">
+                                <div class="pic-frame-inner">
+                                    <img id="yousef-profile-img" src="images/photo_3_2026-08-11_02-55-01.jpg"
+                                        alt="Yousef Picture"
+                                        onerror="this.src='images/photo_3_2026-08-11_02-55-01.jpg'">
+                                </div>
+                                <div class="corner-border top-left"></div>
+                                <div class="corner-border top-right"></div>
+                                <div class="corner-border bottom-left"></div>
+                                <div class="corner-border bottom-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. WHY YOU'RE SPECIAL SECTION -->
+            <section id="special" class="section-padding bg-darker">
+                <div class="container">
+                    <h2 class="section-title text-center">Why Yousef? ❤️</h2>
+                    <p class="section-subtitle text-center">كل صفة بيك تخليك شخص ما يتكرر، وهذي الأشياء البسيطة اللي
+                        تميزك بقلبي</p>
+
+                    <div class="special-cards-grid">
+                        <!-- Card 1 -->
+                        <div class="special-card cyber-panel-interactive" data-index="1">
+                            <div class="card-number">01</div>
+                            <h3 class="card-title">Friend</h3>
+                            <div class="card-body-content">
+                                <p>الصديق الحقيقي اللي تلگاه بأي وقت، يشاركك التفاصيل التافهة والقرارات المصيرية بنفس
+                                    الشغف والاهتمام.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="special-card cyber-panel-interactive" data-index="2">
+                            <div class="card-number">02</div>
+                            <h3 class="card-title">Brother</h3>
+                            <div class="card-body-content">
+                                <p>سند حقيقي وأخ ما جابته أمي، بكل المواقف الصعبة ألقاك واگف وياي، تشد ظهري وتخليني أحس
+                                    بالأمان.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="special-card cyber-panel-interactive" data-index="3">
+                            <div class="card-number">03</div>
+                            <h3 class="card-title">Support</h3>
+                            <div class="card-body-content">
+                                <p>أكبر داعم ومحفز، لما أشكك بنفسي أو أضعف أنت أول واحد يرجع يذكرني بقدراتي ويگلي "تگدر
+                                    تسويها".</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="special-card cyber-panel-interactive" data-index="4">
+                            <div class="card-number">04</div>
+                            <h3 class="card-title">Memories</h3>
+                            <div class="card-body-content">
+                                <p>كل الضحكات، السهرات، المغامرات، وحتى الأوقات الهادئة، انطبعت بذاكرتي وصارت أحلى
+                                    ذكريات بعمري.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="special-card cyber-panel-interactive" data-index="5">
+                            <div class="card-number">05</div>
+                            <h3 class="card-title">Trust</h3>
+                            <div class="card-body-content">
+                                <p>المكان الآمن لأسراري وكلامي بدون خوف من حكم أو سوء فهم. الثقة بيك عمياء وما تهزها
+                                    الأيام.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="special-card cyber-panel-interactive" data-index="6">
+                            <div class="card-number">06</div>
+                            <h3 class="card-title">Special Person</h3>
+                            <div class="card-body-content">
+                                <p>وجودك يضيف لمسة مميزة وجميلة لكل يوم، وتأثيرك الإيجابي واضح بكل جانب من جوانب حياتي.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. FUTURE LOADING SECTION -->
+            <section id="future-loading" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title text-left ltr-text">&gt; future_loading.sys</h2>
+                    <div class="future-container">
+                        <div class="progress-section">
+                            <!-- Progress Bar 1 -->
+                            <div class="progress-item">
+                                <div class="progress-info ltr-text">
+                                    <span class="progress-label">Engineering Career</span>
+                                    <span class="progress-value" id="progress-val-1">0%</span>
+                                </div>
+                                <div class="bar-outer">
+                                    <div class="bar-inner neon-cyan-bg" data-target="90" id="progress-bar-1"></div>
+                                </div>
+                            </div>
+
+                            <!-- Progress Bar 2 -->
+                            <div class="progress-item">
+                                <div class="progress-info ltr-text">
+                                    <span class="progress-label">Dreams Loading</span>
+                                    <span class="progress-value" id="progress-val-2">0%</span>
+                                </div>
+                                <div class="bar-outer">
+                                    <div class="bar-inner neon-green-bg" data-target="80" id="progress-bar-2"></div>
+                                </div>
+                            </div>
+
+                            <!-- Progress Bar 3 -->
+                            <div class="progress-item">
+                                <div class="progress-info ltr-text">
+                                    <span class="progress-label">Success Rate</span>
+                                    <span class="progress-value" id="progress-val-3">0%</span>
+                                </div>
+                                <div class="bar-outer">
+                                    <div class="bar-inner neon-pink-bg" data-target="100" id="progress-bar-3"></div>
+                                </div>
+                            </div>
+
+                            <!-- Progress Bar 4 -->
+                            <div class="progress-item">
+                                <div class="progress-info ltr-text">
+                                    <span class="progress-label">Happiness Index</span>
+                                    <span class="progress-value" id="progress-val-4">0%</span>
+                                </div>
+                                <div class="bar-outer">
+                                    <div class="bar-inner neon-cyan-bg" data-target="95" id="progress-bar-4"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Output Console -->
+                        <div class="future-log-console text-left ltr-text">
+                            <p class="blink-fast text-red font-bold">SYSTEM STATUS: READY FOR SUCCESS 🚀</p>
+                            <p class="console-subtext">Your future is compiling...</p>
+                            <p class="console-subtext">Please wait...</p>
+                            <p class="text-green">Success will be worth it.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. MEMORIES SECTION (GALLERY) -->
+            <section id="memories" class="section-padding bg-darker">
+                <div class="container">
+                    <h2 class="section-title text-left ltr-text">&gt; /memories</h2>
+                    <p class="section-subtitle text-right">لحظات وذكريات حلوة خلدتها الصور، اضغط لتكبير الصورة</p>
+
+                    <div class="gallery-grid" id="gallery-container">
+                        <!-- 6 Photo Slots dynamically set or statically defined -->
+                        <div class="gallery-item cyber-panel" data-image-index="0">
+                            <div class="gallery-img-wrapper">
+                                <img src="images/photo_1_2026-08-11_02-55-01.jpg" alt="Memory 1"
+                                    onerror="this.src='images/photo_1_2026-08-11_02-55-01.jpg'">
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="zoom-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item cyber-panel" data-image-index="1">
+                            <div class="gallery-img-wrapper">
+                                <img src="images/photo_2_2026-08-11_02-55-01.jpg" alt="Memory 2"
+                                    onerror="this.src='images/photo_2_2026-08-11_02-55-01.jpg'">
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="zoom-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item cyber-panel" data-image-index="2">
+                            <div class="gallery-img-wrapper">
+                                <img src="images/photo_4_2026-08-11_02-55-01.jpg" alt="Memory 3"
+                                    onerror="this.src='images/photo_4_2026-08-11_02-55-01.jpg'">
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="zoom-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item cyber-panel" data-image-index="3">
+                            <div class="gallery-img-wrapper">
+                                <img src="images/photo_5_2026-08-11_02-55-01.jpg" alt="Memory 4"
+                                    onerror="this.src='images/photo_5_2026-08-11_02-55-01.jpg'">
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="zoom-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item cyber-panel" data-image-index="4">
+                            <div class="gallery-img-wrapper">
+                                <img src="images/photo_4_2026-08-11_02-55-01.jpg" alt="Memory 5"
+                                    onerror="this.src='images/photo_4_2026-08-11_02-55-01.jpg'">
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="zoom-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item cyber-panel" data-image-index="5">
+                            <div class="gallery-img-wrapper">
+                                <img src="images/photo_6_2026-08-11_02-55-01.jpg" alt="Memory 6"
+                                    onerror="this.src='images/photo_6_2026-08-11_02-55-01.jpg'">
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="zoom-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. BIRTHDAY MESSAGE SECTION -->
+            <section id="message" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title text-left ltr-text">&gt; message.exe</h2>
+
+                    <div class="message-card-wrapper">
+                        <div class="message-terminal-window cyber-panel">
+                            <div class="panel-header">
+                                <span class="panel-icon">✉️</span>
+                                <span class="panel-title">heart_message.txt</span>
+                            </div>
+                            <div class="panel-body text-center msg-content-rtl">
+                                <div id="letter-content" class="birthday-text-content">
+                                    <!-- Populated by typewriter/fade trigger on scroll -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. SECRET MESSAGE SECTION -->
+            <section id="secret-anchor" class="section-padding bg-darker">
+                <div class="container text-center">
+                    <h2 class="section-title text-center">Secret File 🔒</h2>
+
+                    <div class="secret-box-container">
+                        <!-- Pre-Unlock State -->
+                        <div id="secret-locked-ui">
+                            <p class="secret-warning">هذا القسم مشفر ومحمي. يرجى إثبات مستوى الصداقة لفتح الملف السري.
+                            </p>
+                            <button id="unlock-secret-btn" class="cyber-btn neon-border-red">
+                                <span class="btn-text">🔐 ACCESS SECRET MESSAGE</span>
+                                <span class="btn-glow"></span>
+                            </button>
+                        </div>
+
+                        <!-- Unlock Progress Terminal (Appears after click) -->
+                        <div id="secret-terminal-ui" class="cyber-panel text-left ltr-text hidden">
+                            <div class="panel-header">
+                                <span class="panel-title">friendship_decryptor.sh</span>
+                            </div>
+                            <div class="panel-body terminal-console" id="secret-terminal-logs">
+                                <!-- Logs typed dynamically by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Unlocked Success Text (Revealed after progress complete) -->
+                        <div id="secret-unlocked-ui"
+                            class="cyber-panel text-center msg-content-rtl hidden animate-glow">
+                            <div class="panel-header">
+                                <span class="panel-title">🔓 decrypted_friendship_log.txt</span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="secret-message-text" id="secret-message-placeholder">
+                                    <!-- Populated from birthdayData -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. PROGRAMMER EASTER EGGS / CLI CONSOLE SECTION -->
+            <section id="easter-eggs" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title text-left ltr-text">&gt; sudo happy_mode</h2>
+
+                    <div class="easter-egg-layout grid-2">
+                        <!-- Sudo Happier Module -->
+                        <div class="cyber-panel">
+                            <div class="panel-header">
+                                <span class="panel-title">administrator_privileges.sh</span>
+                            </div>
+                            <div class="panel-body text-left ltr-text">
+                                <p class="text-muted">Execute terminal commands to override standard modules.</p>
+                                <div class="terminal-cmd-entry">
+                                    <button id="sudo-happy-btn" class="cyber-btn-small neon-border-green">
+                                        sudo make_yousef_happy
+                                    </button>
+                                </div>
+                                <div id="sudo-console-output" class="sudo-terminal-console hidden">
+                                    <!-- CLI steps populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructions & Interactive Info -->
+                        <div class="cyber-panel-hint">
+                            <h3 class="hint-title cyan-text">👨‍💻 Programmer Console Hotkeys</h3>
+                            <ul class="hint-list ltr-text">
+                                <li>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> anywhere to spawn the
+                                    floating admin console.</li>
+                                <li>Type the letters <span class="green-text">"yousef"</span> anywhere on the screen to
+                                    trigger system fireworks and code matrix overflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. BIRTHDAY GIFT SECTION -->
+            <section id="birthday-gift" class="section-padding bg-darker text-center">
+                <div class="container">
+                    <h2 class="section-title text-center glow-text-red">Open Your Gift 🎁</h2>
+                    <p class="section-subtitle text-center">اضغط على الهدية أدناه لتفعيل وضع الاحتفال الكامل وتثبيت
+                        ملفات الفرح</p>
+
+                    <div class="gift-box-wrapper">
+                        <button id="open-gift-btn" class="gift-box-interactive animate-bounce">
+                            <div class="gift-box-lid"></div>
+                            <div class="gift-box-ribbon"></div>
+                            <div class="gift-box-body"></div>
+                        </button>
+                    </div>
+
+                    <!-- Post Gift Celebration Box (Initially Hidden) -->
+                    <div id="gift-reveal-box" class="cyber-panel hidden">
+                        <div class="panel-header text-center">
+                            <span class="panel-title text-red">YOUSEF.exe SUCCESS REPORT</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="gift-title animate-glow">HAPPY BIRTHDAY, ENGINEER! 🎂👨‍💻❤️</div>
+
+                            <div class="gift-system-status ltr-text text-left">
+                                <div class="status-row"><span class="status-key">System:</span> <span
+                                        class="status-value cyan-text">Yousef.exe</span></div>
+                                <div class="status-row"><span class="status-key">Status:</span> <span
+                                        class="status-value green-text">Running successfully...</span></div>
+                                <div class="status-row"><span class="status-key">Age:</span> <span
+                                        class="status-value neon-pink-text">+1 Year Loaded</span></div>
+                                <div class="status-row"><span class="status-key">Friendship:</span> <span
+                                        class="status-value font-bold">∞</span></div>
+                                <div class="status-row"><span class="status-key">Error:</span> <span
+                                        class="status-value text-red">None ❤️</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 18. FOOTER -->
+        <footer class="system-footer">
+            <div class="footer-content">
+                <div class="footer-heart">Made with ❤️ for Yousef</div>
+                <div class="footer-year">© 2026</div>
+                <div class="footer-friendship text-monospace">Friendship Status: ∞</div>
+                <div class="footer-ending text-monospace ltr-text">&lt; Yousef.exe / End of System &gt;</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- LIGHTBOX MODAL FOR MEMORIES GALLERY -->
+    <div id="gallery-lightbox" class="lightbox-modal hidden" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Expanded Memory">
+        </div>
+    </div>
+
+    <!-- SECRET FLOATING TERMINAL MODAL (Ctrl+Shift+Y) -->
+    <div id="secret-terminal-modal" class="modal-overlay hidden">
+        <div class="terminal-modal-box">
+            <div class="terminal-header">
+                <span class="panel-title ltr-text">admin@yousef.exe:~</span>
+                <button class="terminal-modal-close" id="terminal-modal-close-btn">&times;</button>
+            </div>
+            <div class="terminal-modal-body ltr-text text-left">
+                <div class="modal-console-logs" id="modal-console-logs">
+                    Welcome to YOUSEF.exe Admin Command Shell.<br>
+                    Type 'help' to see list of available hacks.
+                </div>
+                <div class="terminal-input-line">
+                    <span class="cmd-prompt">guest@yousef.exe:~$</span>
+                    <input type="text" id="terminal-cli-input" autofocus autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript inclusion -->
+    <script src="script.js"></script>
+</body>
+
+</html>
